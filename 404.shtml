@@ -1,0 +1,11 @@
+<HTML>
+<HEAD>
+<TITLE>Meta Redirect Code</TITLE>
+<meta http-equiv="refresh" content="0;url=http://whoisthecutest.com/">
+</HEAD>
+<BODY>
+<script language="javascript">
+location.replace("http://whoisthecutest.com/");
+</script>
+</BODY>
+</HTML>
