@@ -1,4 +1,3 @@
-// src/utils/analytics.ts
 const loadGoogleAnalytics = () => {
   if (import.meta.env.PROD) {
     const script = document.createElement('script')
@@ -8,7 +7,8 @@ const loadGoogleAnalytics = () => {
 
     script.onload = () => {
       window.dataLayer = window.dataLayer || []
-      function gtag() { dataLayer.push(arguments) }
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      function gtag(...args: any[]) { window.dataLayer.push(args) }
       gtag('js', new Date())
       gtag('config', 'G-4M81HGM6BL')
     }
@@ -16,7 +16,8 @@ const loadGoogleAnalytics = () => {
     // eslint-disable-next-line no-console
     console.log('Google Analytics script would be loaded here.')
     window.dataLayer = window.dataLayer || []
-    function gtag() { dataLayer.push(arguments) }
+    // eslint-disable-next-line no-inner-declarations, @typescript-eslint/no-explicit-any
+    function gtag(...args: any[]) { window.dataLayer.push(args) }
     gtag('js', new Date())
     gtag('config', 'G-4M81HGM6BL')
     // eslint-disable-next-line no-console
