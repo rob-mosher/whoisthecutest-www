@@ -1,3 +1,10 @@
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 const loadGoogleAnalytics = () => {
   // googleTagId is validated at build time, so we can trust it here
   const googleTagId = import.meta.env.VITE_GOOGLE_TAG_ID || ''
@@ -10,21 +17,15 @@ const loadGoogleAnalytics = () => {
 
     script.onload = () => {
       window.dataLayer = window.dataLayer || []
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      function gtag(...args: any[]) { window.dataLayer.push(args) }
-      gtag('js', new Date())
-      gtag('config', googleTagId)
+      window.gtag = (...args: unknown[]) => {
+        window.dataLayer.push(args)
+      }
+      window.gtag('js', new Date())
+      window.gtag('config', googleTagId)
     }
   } else {
     // eslint-disable-next-line no-console
-    console.log('Google Analytics script would be loaded here.')
-    window.dataLayer = window.dataLayer || []
-    // eslint-disable-next-line no-inner-declarations, @typescript-eslint/no-explicit-any
-    function gtag(...args: any[]) { window.dataLayer.push(args) }
-    gtag('js', new Date())
-    gtag('config', googleTagId)
-    // eslint-disable-next-line no-console
-    console.log('Simulating gtag call:', window.dataLayer)
+    console.log('Non-production build detected. Google Analytics script would be loaded here.')
   }
 }
 
