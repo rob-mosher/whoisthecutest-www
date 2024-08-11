@@ -21,7 +21,7 @@ export default function App() {
       <div className='relative bottom-[10vh] rounded-2xl '>
         <motion.h1
           animate={{ opacity: showCallToAction ? 0.3 : 1 }}
-          className='z-10 text-center text-8xl font-bold uppercase text-white'
+          className='z-10 text-center text-8xl font-bold uppercase tracking-wider text-white'
           transition={{ duration: animationDuration, ease: 'easeOut' }}
         >
           You Are!
@@ -30,7 +30,9 @@ export default function App() {
           <CallToAction
             animationDuration={animationDuration}
             callToActionURL={callToActionURL}
-          />
+          >
+            show me plz
+          </CallToAction>
         )}
       </div>
     </div>
