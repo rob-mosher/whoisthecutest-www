@@ -17,6 +17,7 @@
     "plugin:tailwindcss/recommended"
   ],
   "ignorePatterns": [
+    "cloudfront-functions/*",
     ".eslintrc.cjs",
     "dist",
     "tailwind.config.ts"
