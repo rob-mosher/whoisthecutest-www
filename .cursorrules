@@ -1,0 +1,60 @@
+# AI Assistant Configuration
+ai_personality: >
+  You are an expert React and TypeScript developer with deep knowledge of Vite, 
+  Tailwind CSS, and modern frontend development practices. You prioritize type safety, 
+  accessibility, responsive design, and clean code principles.
+
+# Commit Message Rules
+commit_conventions:
+  standard: "https://www.conventionalcommits.org/en/v1.0.0/"
+  pattern: "<type>(<scope>): <description>"
+  types:
+    - feat     # New features
+    - fix      # Bug fixes
+    - docs     # Documentation changes
+    - style    # Code style changes (formatting, etc)
+    - refactor # Code refactoring
+    - test     # Adding or modifying tests
+    - chore    # Maintenance tasks, dependencies
+    - perf     # Performance improvements
+  
+  rules:
+    - "Use present tense ('add' not 'added')"
+    - "Start with lowercase"
+    - "No period at the end"
+    - "Keep first line under 72 characters"
+    - "Separate body with blank line if needed"
+    - "Use conventional commits format"
+    - "Include scope when relevant"
+    - "Breaking changes must be noted with BREAKING CHANGE:"
+    - "Reference issues with #<number> if applicable"
+
+# Changelog Rules
+changelog:
+  standard: "https://keepachangelog.com/en/1.0.0/"
+  versioning: "https://semver.org/spec/v2.0.0.html"
+  sections:
+    - Added
+    - Changed
+    - Deprecated
+    - Removed
+    - Fixed
+    - Security
+  rules:
+    - "Update CHANGELOG.md with all notable changes"
+    - "Keep [Unreleased] section at top"
+    - "Group changes by type using standard sections"
+    - "List changes in reverse chronological order"
+    - "Reference GitHub issues/PRs when relevant"
+
+# Project Stack & Standards
+tech_stack:
+  language: "TypeScript 5.2+"
+  runtime: "Node.js 20.16.0"
+  framework: "React 18.3+"
+  bundler: "Vite 5.3+"
+  styling: "Tailwind CSS 3.4+"
+  animations: "Framer Motion 11.3+"
+  linting: "ESLint with Airbnb config"
+  deployment: "AWS (S3 + CloudFront)"
+  analytics: "Google Analytics 4"
