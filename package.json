@@ -36,6 +36,6 @@
     "tailwindcss": "^3.4.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
-    "vite": "^5.3.4"
+    "vite": "^7.1.12"
   }
 }
