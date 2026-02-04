@@ -27,6 +27,10 @@ jobs:
 
     - name: Build project
       env:
+        VITE_ENABLE_APP_INSIGHTS: 'true'
+        VITE_ENABLE_GOOGLE_ANALYTICS: 'false'
+        VITE_ANALYTICS_DISABLE: ${{ secrets.VITE_ANALYTICS_DISABLE }}
+        VITE_APP_INSIGHTS_CONNECTION_STRING: ${{ secrets.VITE_APP_INSIGHTS_CONNECTION_STRING }}
         VITE_GOOGLE_TAG_ID: ${{ secrets.VITE_GOOGLE_TAG_ID }}
       run: npm run build
 
