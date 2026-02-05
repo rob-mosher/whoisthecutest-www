@@ -1,0 +1,9 @@
+location                        = ""
+resource_group_name             = ""
+create_resource_group           = false
+log_analytics_workspace_name    = ""
+log_analytics_workspace_sku     = ""
+log_analytics_retention_in_days = 0
+application_insights_name       = ""
+
+tags = {}

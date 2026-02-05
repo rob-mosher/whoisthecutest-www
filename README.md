@@ -5,3 +5,6 @@
 </p>
 
 Visit [https://whoisthecutest.com](https://whoisthecutest.com/). Stick around for a few seconds for a secret bonus.
+
+## Infrastructure
+Azure Application Insights is provisioned via Terraform in `infra/azure`. See `infra/azure/README.md` for setup, remote state bootstrap, and outputs.
