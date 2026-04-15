@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import react from '@vitejs/plugin-react-swc'
 import * as dotenv from 'dotenv'
 import tsNode from 'ts-node'
@@ -24,4 +25,8 @@ if (!telemetryDisabled) {
 
 export default defineConfig({
   plugins: [react()],
+  test: {
+    environment: 'happy-dom',
+    setupFiles: ['./src/test/setup.ts'],
+  },
 })
