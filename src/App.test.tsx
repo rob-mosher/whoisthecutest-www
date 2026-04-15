@@ -1,12 +1,17 @@
 import { act, render, screen } from '@testing-library/react'
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import {
+  afterEach,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi
+} from 'vitest'
 import App from './App'
 
 vi.mock('framer-motion', () => ({
   motion: {
-    h1: ({ animate, initial, transition, children, ...props }: any) => (
-      <h1 {...props}>{children}</h1>
-    ),
+    h1: (props: any) => <h1 className={props.className}>{props.children}</h1>,
   },
 }))
 

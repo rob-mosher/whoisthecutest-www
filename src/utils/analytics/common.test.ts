@@ -1,4 +1,11 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import {
+  afterEach,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi
+} from 'vitest'
 import { isDoNotTrackEnabled, isTelemetryDisabled } from './common'
 
 describe('isDoNotTrackEnabled', () => {

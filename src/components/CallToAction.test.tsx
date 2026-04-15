@@ -1,12 +1,25 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import {
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi
+} from 'vitest'
 import CallToAction from './CallToAction'
 
 vi.mock('framer-motion', () => ({
   motion: {
-    button: ({ animate, initial, transition, whileHover, whileTap, children, ...props }: any) => (
-      <button {...props}>{children}</button>
+    button: (props: any) => (
+      <button
+        className={props.className}
+        onClick={props.onClick}
+        style={props.style}
+        type='button'
+      >
+        {props.children}
+      </button>
     ),
   },
 }))

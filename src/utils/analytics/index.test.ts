@@ -1,11 +1,17 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-
-vi.mock('./appInsights', () => ({ default: vi.fn() }))
-vi.mock('./googleAnalytics', () => ({ default: vi.fn() }))
-
+import {
+  afterEach,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi
+} from 'vitest'
 import initAppInsights from './appInsights'
 import initGoogleAnalytics from './googleAnalytics'
 import initAnalytics from './index'
+
+vi.mock('./appInsights', () => ({ default: vi.fn() }))
+vi.mock('./googleAnalytics', () => ({ default: vi.fn() }))
 
 describe('initAnalytics', () => {
   beforeEach(() => {
