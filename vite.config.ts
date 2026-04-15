@@ -1,8 +1,7 @@
-/// <reference types="vitest" />
 import react from '@vitejs/plugin-react-swc'
 import * as dotenv from 'dotenv'
 import tsNode from 'ts-node'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 
 dotenv.config()
 tsNode.register()

@@ -3,7 +3,10 @@ const isDoNotTrackEnabled = () => {
     return false
   }
 
-  const dnt = navigator.doNotTrack || (typeof window !== 'undefined' ? window.doNotTrack : undefined)
+  const windowWithDnt = typeof window !== 'undefined'
+    ? (window as Window & { doNotTrack?: string })
+    : null
+  const dnt = navigator.doNotTrack || windowWithDnt?.doNotTrack
   return dnt === '1' || dnt === 'yes'
 }
 
